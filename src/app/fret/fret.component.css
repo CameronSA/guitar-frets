@@ -1,0 +1,8 @@
+.fret-container {
+  display: flex;
+  width: 10rem;
+  background-color: var(--light-background-colour);
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: black;
+}
