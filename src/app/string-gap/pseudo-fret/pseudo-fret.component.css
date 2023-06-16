@@ -1,0 +1,21 @@
+.fret-container {
+  display: flex;
+  height: 0;
+  border-width: 0;
+  border-left-width: 0.1rem;
+  border-right-width: 0.1rem;
+  border-style: solid;
+}
+
+.marker-container {
+  position: relative;
+}
+
+.marker {
+  position: absolute;
+  background-color: var(--light-marker-colour);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  top: -0.5rem;
+}

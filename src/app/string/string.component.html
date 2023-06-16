@@ -1,5 +1,5 @@
 <div class="string-container">
-  <ng-container *ngFor="let number of numberFrets">
-    <app-fret></app-fret>
+  <ng-container *ngFor="let fret of frets">
+    <app-fret [fretNumber]="fret"></app-fret>
   </ng-container>
 </div>

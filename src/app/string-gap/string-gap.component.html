@@ -1,0 +1,8 @@
+<div class="string-gap-container">
+  <ng-container *ngFor="let fretMarker of frets">
+    <app-pseudo-fret
+      [fretNumber]="fretMarker.index"
+      [isMarked]="fretMarker.isMarked"
+    ></app-pseudo-fret>
+  </ng-container>
+</div>

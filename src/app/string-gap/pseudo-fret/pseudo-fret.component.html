@@ -1,0 +1,13 @@
+<div class="fret-container" [ngStyle]="{ 'width': width }">
+  <ng-container *ngIf="isMarked else nbsp">
+    <div class="marker-container">
+      <div class="marker" [ngStyle]="{ 'left': halfWidth}">
+        &nbsp;
+      </div>
+    </div>
+  </ng-container>
+  </div>
+
+<ng-template #nbsp>
+  &nbsp;
+</ng-template>

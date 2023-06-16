@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FretBoardComponent } from './fret-board.component';
+import { PseudoFretComponent } from './pseudo-fret.component';
 
-describe('FretBoardComponent', () => {
-  let component: FretBoardComponent;
-  let fixture: ComponentFixture<FretBoardComponent>;
+describe('PseudoFretComponent', () => {
+  let component: PseudoFretComponent;
+  let fixture: ComponentFixture<PseudoFretComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FretBoardComponent ]
+      declarations: [ PseudoFretComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FretBoardComponent);
+    fixture = TestBed.createComponent(PseudoFretComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
