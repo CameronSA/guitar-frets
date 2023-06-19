@@ -2,4 +2,7 @@
 :root {
   --light-background-colour: #C4A484;
   --light-marker-colour: beige;
+  --light-string-colour: gold;
+  --light-string-shadow: rgba(0, 0, 0, 0.116);
+  --light-fret-colour: silver;
 }

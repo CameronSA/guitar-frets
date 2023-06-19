@@ -1,7 +1,33 @@
 .fret-container {
   display: flex;
+  flex-direction: column;
   background-color: var(--light-background-colour);
-  border-width: 0.1rem;
+  border-width: 0;
+  border-left-width: 0.1rem;
+  border-right-width: 0.1rem;
   border-style: solid;
-  border-color: black;
+  border-color: var(--light-fret-colour);
+  height: 1.5rem;
+}
+
+.fret-component {
+  height: 50%;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  margin-left: -0.1rem;
+  margin-right: -0.1rem;
+}
+
+.fret-top {
+  border-width: 0;
+  border-bottom-width: 0.1rem;
+  border-style: solid;
+  border-color: var(--light-string-colour);
+}
+
+.fret-bottom {
+  border-width: 0;
+  border-top-width: 0.1rem;
+  border-style: solid;
+  border-color: var(--light-string-shadow);
 }
