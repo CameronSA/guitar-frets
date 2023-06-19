@@ -10,4 +10,5 @@ export class AppComponent {
   title = 'guitar-frets';
 
   tuning = Tuning.Standard;
+  showNotes = true;
 }

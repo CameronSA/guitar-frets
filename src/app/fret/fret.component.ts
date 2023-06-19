@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { getFretWidth, getNoteIndex, getNotes } from 'src/main';
 
 @Component({
@@ -12,6 +12,7 @@ export class FretComponent implements OnInit {
   @Input() fretNumber: number = 0;
   @Input() tuning: number = 0;
   @Input() flats: boolean = false;
+  @Input() showNotes: boolean = false;
 
   ngOnInit() {
     this.width = getFretWidth(this.fretNumber);

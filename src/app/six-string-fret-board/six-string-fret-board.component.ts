@@ -17,6 +17,7 @@ export class SixStringFretBoardComponent implements OnInit {
   numberFrets = 20;
   tunings: [number, string][] = [];
   @Input() selectedTuning: Tuning = Tuning.Standard;
+  @Input() showNotes: boolean = false;
 
   ngOnInit(): void {
     let notes = getNotes();

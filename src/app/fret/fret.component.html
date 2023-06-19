@@ -1,8 +1,8 @@
 <div class="fret-container" [ngStyle]="{ width: width }">
-  <div class="fret-component fret-top">{{note}}</div>
+  <div class="fret-component fret-top">
+    <ng-container *ngIf="showNotes">
+      {{note}}
+    </ng-container>
+  </div>
   <div class="fret-component fret-bottom">&nbsp;</div>
 </div>
-
-<ng-template #noteBox>
-  {{note}}
-</ng-template>
