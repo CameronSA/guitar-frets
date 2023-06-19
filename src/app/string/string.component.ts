@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-interface FretMarker {
-  index: number;
-  hasMarker: boolean;
-}
-
 @Component({
   selector: 'app-string',
   templateUrl: './string.component.html',
@@ -13,6 +8,7 @@ interface FretMarker {
 export class StringComponent implements OnInit {
   frets: Array<number> = [];
   @Input() numberFrets: number = 0;
+  @Input() tuning: number = 0;
 
   ngOnInit() {
     this.frets = [];

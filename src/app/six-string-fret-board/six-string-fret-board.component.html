@@ -1,23 +1,20 @@
 <div class="container">
   <div class="tunings">
-    <div class="tuning">E</div>
-    <div class="tuning">B</div>
-    <div class="tuning">G</div>
-    <div class="tuning">D</div>
-    <div class="tuning">A</div>
-    <div class="tuning">E</div>
+    <div class="tuning" *ngFor="let tuning of tunings">
+      {{tuning[1]}}
+    </div>
   </div>
   <div class="fret-board">
-    <app-string class="top-string" [numberFrets]="numberFrets"></app-string>
+    <app-string class="top-string" [numberFrets]="numberFrets" [tuning]="tunings[0][0]"></app-string>
     <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
-    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string [numberFrets]="numberFrets" [tuning]="tunings[1][0]"></app-string>
     <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
-    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string [numberFrets]="numberFrets" [tuning]="tunings[2][0]"></app-string>
     <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[2,4,6,8,14,16]"></app-string-gap>
-    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string [numberFrets]="numberFrets" [tuning]="tunings[3][0]"></app-string>
     <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
-    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string [numberFrets]="numberFrets" [tuning]="tunings[4][0]"></app-string>
     <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
-    <app-string class="bottom-string" [numberFrets]="numberFrets"></app-string>
+    <app-string class="bottom-string" [numberFrets]="numberFrets" [tuning]="tunings[5][0]"></app-string>
   </div>
 </div>
