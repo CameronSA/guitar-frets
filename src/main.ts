@@ -6,7 +6,7 @@ platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
 
-export function getNotes(flats: boolean = false): Map<number, string> {
+export function getNotes(flats: boolean): Map<number, string> {
   let baseNotes = new Map<number, string>([
     [0, 'A'],
     [2, 'B'],

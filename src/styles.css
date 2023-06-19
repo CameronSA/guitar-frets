@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
   --light-background-colour: #C4A484;
-  --light-marker-colour: beige;
+  --light-marker-colour: silver;
   --light-string-colour: gold;
   --light-string-shadow: rgba(0, 0, 0, 0.116);
   --light-fret-colour: silver;
   --light-tuning-colour: beige;
+  --light-note-background-colour: beige;
+  --dark-note-colour: beige;
+  --light-note-colour: black;
+  --light-note-hover: silver;
 }
 
 body {

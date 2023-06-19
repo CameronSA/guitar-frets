@@ -11,4 +11,5 @@ export class AppComponent {
 
   tuning = Tuning.Standard;
   showNotes = true;
+  showFlats = true;
 }

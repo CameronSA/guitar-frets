@@ -18,9 +18,10 @@ export class SixStringFretBoardComponent implements OnInit {
   tunings: [number, string][] = [];
   @Input() selectedTuning: Tuning = Tuning.Standard;
   @Input() showNotes: boolean = false;
+  @Input() showFlats: boolean = false;
 
   ngOnInit(): void {
-    let notes = getNotes();
+    let notes = getNotes(this.showFlats);
     let tuningIndices = this.getTuningIndices(this.selectedTuning);
     tuningIndices.forEach((index) => {
       this.tunings.push([index, notes.get(index)!]);

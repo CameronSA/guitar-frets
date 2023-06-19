@@ -8,6 +8,7 @@
   border-style: solid;
   border-color: var(--light-fret-colour);
   height: 100%;
+  text-align: center;
 }
 
 .fret-component {
@@ -23,6 +24,9 @@
   border-bottom-width: 0.1rem;
   border-style: solid;
   border-color: var(--light-string-colour);
+  display: flex;
+  justify-content: right;
+  position: relative;
 }
 
 .fret-bottom {
@@ -30,4 +34,27 @@
   border-top-width: 0.1rem;
   border-style: solid;
   border-color: var(--light-string-shadow);
+}
+
+.note {
+  position: absolute;
+  bottom: -0.8rem;
+  padding: 0.1rem;
+  background-color: var(--light-note-background-colour);
+  border-width: 0.1rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-color: transparent;
+  z-index: 10;
+  color: var(--light-note-colour);
+  cursor: pointer;
+}
+
+.note > * {
+  width: 1.5rem;
+}
+
+.note:hover {
+  background-color: var(--light-note-hover);
+  color: var(--dark-note-colour);
 }

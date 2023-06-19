@@ -1,8 +1,8 @@
 <div class="fret-container" [ngStyle]="{ width: width }">
   <div class="fret-component fret-top">
-    <ng-container *ngIf="showNotes">
-      {{note}}
-    </ng-container>
+    <div class="note" *ngIf="showNotes">
+      <div>{{note}}</div>
+    </div>
   </div>
   <div class="fret-component fret-bottom">&nbsp;</div>
 </div>

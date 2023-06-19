@@ -10,6 +10,7 @@ export class StringComponent implements OnInit {
   @Input() numberFrets: number = 0;
   @Input() tuning: number = 0;
   @Input() showNotes: boolean = false;
+  @Input() showFlats: boolean = false;
 
   ngOnInit() {
     this.frets = [];
