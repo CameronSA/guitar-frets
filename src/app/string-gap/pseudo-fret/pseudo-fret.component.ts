@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { getFretWidth, getHalfFretWidth } from 'src/app/app.module';
+import { getFretWidth, getHalfFretWidth } from 'src/main';
 
 @Component({
   selector: 'app-pseudo-fret',

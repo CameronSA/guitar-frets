@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { getFretWidth } from '../app.module';
+import { getFretWidth } from 'src/main';
 
 @Component({
   selector: 'app-fret',
