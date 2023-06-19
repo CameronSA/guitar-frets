@@ -4,17 +4,27 @@ div {
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: left;
   background-color: var(--light-background-colour);
   box-shadow: 0.1rem 0.2rem 0.5rem black;
-  width: 57.5rem;
+  width: 59.5rem;
   border-width: 0;
   border-left-width: 0.1rem;
   border-right-width: 0.1rem;
   border-style: solid;
   border-color: transparent;
   border-radius: 0.1rem;
+}
+
+.tunings {
+  padding: 0.5rem;
+}
+
+.tuning {
+  padding-top: 0.04rem;
+  height: 16.6667%;
+  color: var(--light-tuning-colour);
 }
 
 .top-string {

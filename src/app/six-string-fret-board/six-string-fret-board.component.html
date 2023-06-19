@@ -1,13 +1,23 @@
 <div class="container">
-  <app-string class="top-string" [numberFrets]="numberFrets"></app-string>
-  <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
-  <app-string [numberFrets]="numberFrets"></app-string>
-  <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
-  <app-string [numberFrets]="numberFrets"></app-string>
-  <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[2,4,6,8,14,16]"></app-string-gap>
-  <app-string [numberFrets]="numberFrets"></app-string>
-  <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
-  <app-string [numberFrets]="numberFrets"></app-string>
-  <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
-  <app-string class="bottom-string" [numberFrets]="numberFrets"></app-string>
+  <div class="tunings">
+    <div class="tuning">E</div>
+    <div class="tuning">B</div>
+    <div class="tuning">G</div>
+    <div class="tuning">D</div>
+    <div class="tuning">A</div>
+    <div class="tuning">E</div>
+  </div>
+  <div class="fret-board">
+    <app-string class="top-string" [numberFrets]="numberFrets"></app-string>
+    <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
+    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
+    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[2,4,6,8,14,16]"></app-string-gap>
+    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
+    <app-string [numberFrets]="numberFrets"></app-string>
+    <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
+    <app-string class="bottom-string" [numberFrets]="numberFrets"></app-string>
+  </div>
 </div>
