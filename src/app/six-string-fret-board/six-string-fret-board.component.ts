@@ -1,26 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { getDADGADTuningIndices, getNotes, getOpenDTuningIndices, getStandardTuningIndices } from 'src/main';
-
-export enum Tuning {
-  Standard = "standard",
-  OpenD = "opend",
-  DADGAD = "dadgad",
-}
-
+import { Tuning } from '../tuning-cycler/tuning-cycler.component';
 
 @Component({
   selector: 'app-six-string-fret-board',
   templateUrl: './six-string-fret-board.component.html',
   styleUrls: ['./six-string-fret-board.component.css'],
 })
-export class SixStringFretBoardComponent implements OnInit {
+export class SixStringFretBoardComponent implements OnChanges {
   numberFrets = 20;
   tunings: [number, string][] = [];
   @Input() selectedTuning: Tuning = Tuning.Standard;
   @Input() showNotes: boolean = false;
   @Input() showFlats: boolean = false;
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.tunings = [];
     let notes = getNotes(this.showFlats);
     let tuningIndices = this.getTuningIndices(this.selectedTuning);
     tuningIndices.forEach((index) => {

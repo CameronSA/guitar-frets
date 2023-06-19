@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { getFretWidth, getNoteIndex, getNotes } from 'src/main';
 
 @Component({
@@ -6,7 +6,7 @@ import { getFretWidth, getNoteIndex, getNotes } from 'src/main';
   templateUrl: './fret.component.html',
   styleUrls: ['./fret.component.css'],
 })
-export class FretComponent implements OnInit {
+export class FretComponent implements OnInit, OnChanges {
   width: string = '';
   note: string = '';
   @Input() fretNumber: number = 0;
@@ -16,6 +16,9 @@ export class FretComponent implements OnInit {
 
   ngOnInit() {
     this.width = getFretWidth(this.fretNumber);
+  }
+
+  ngOnChanges() {
     let noteIndex = getNoteIndex(this.fretNumber, this.tuning);
     let notes = getNotes(this.flats);
 

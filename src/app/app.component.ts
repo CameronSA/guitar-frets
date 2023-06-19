@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tuning } from './six-string-fret-board/six-string-fret-board.component';
+import { Tuning } from './tuning-cycler/tuning-cycler.component';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +12,8 @@ export class AppComponent {
   tuning = Tuning.Standard;
   showNotes = true;
   showFlats = true;
+
+  onTuningSelection(tuning: Tuning){
+    this.tuning = tuning;
+  }
 }

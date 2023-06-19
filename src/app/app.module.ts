@@ -7,6 +7,7 @@ import { StringComponent } from './string/string.component';
 import { StringGapComponent } from './string-gap/string-gap.component';
 import { SixStringFretBoardComponent } from './six-string-fret-board/six-string-fret-board.component';
 import { PseudoFretComponent } from './string-gap/pseudo-fret/pseudo-fret.component';
+import { TuningCyclerComponent } from './tuning-cycler/tuning-cycler.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PseudoFretComponent } from './string-gap/pseudo-fret/pseudo-fret.compon
     SixStringFretBoardComponent,
     StringGapComponent,
     PseudoFretComponent,
+    TuningCyclerComponent,
   ],
   imports: [BrowserModule],
   providers: [],
