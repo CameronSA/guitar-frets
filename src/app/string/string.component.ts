@@ -23,7 +23,8 @@ export class StringComponent implements OnInit, OnChanges {
   @Input() showNotes: boolean = false;
   @Input() showFlats: boolean = false;
   @Input() resetToggle: boolean = false;
-  resetValue: boolean = false;
+  prevResetToggle: boolean = false;
+  prevTuning: number = 0;
 
   ngOnInit() {
     this.frets = [];
@@ -36,9 +37,28 @@ export class StringComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    if (this.resetValue !== this.resetToggle) {
+    if (this.prevResetToggle !== this.resetToggle) {
       this.reset();
-      this.resetValue = this.resetToggle;
+      this.prevResetToggle = this.resetToggle;
+    }
+
+    if (this.prevTuning !== this.tuning) {
+      let fretsToSelect: number[] = [];
+      this.frets.forEach((fret) => {
+        if (fret.isSelected) {
+          let offset = this.tuning - this.prevTuning;
+          let newIndex = fret.index - offset;
+          if (newIndex >= 0 && newIndex < this.numberFrets - 1) {
+            fretsToSelect.push(newIndex);
+          }
+        }
+      });
+
+      for (let i = 0; i < this.frets.length; i++) {
+        this.frets[i].isSelected = fretsToSelect.includes(this.frets[i].index);
+      }
+
+      this.prevTuning = this.tuning;
     }
   }
 
@@ -50,7 +70,7 @@ export class StringComponent implements OnInit, OnChanges {
 
   onFretClick(index: number) {
     for (let i = 0; i < this.frets.length; i++) {
-      if (i === index) {
+      if (this.frets[i].index === index) {
         this.frets[i].isSelected = !this.frets[i].isSelected;
       }
     }
