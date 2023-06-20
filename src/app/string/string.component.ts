@@ -11,6 +11,7 @@ export class StringComponent implements OnInit {
   @Input() tuning: number = 0;
   @Input() showNotes: boolean = false;
   @Input() showFlats: boolean = false;
+  @Input() resetToggle: boolean = false;
 
   ngOnInit() {
     this.frets = [];

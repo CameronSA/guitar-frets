@@ -12,6 +12,7 @@ export class AppComponent {
   tuning = Tuning.Standard;
   showNotes = false;
   showFlats = false;
+  reset = false;
 
   onTuningSelection(tuning: Tuning) {
     this.tuning = tuning;
@@ -23,5 +24,9 @@ export class AppComponent {
 
   onFlatsToggle(showFlats: boolean) {
     this.showFlats = showFlats;
+  }
+
+  onResetButtonClick() {
+    this.reset = !this.reset
   }
 }

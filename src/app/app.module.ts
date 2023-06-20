@@ -9,6 +9,7 @@ import { SixStringFretBoardComponent } from './six-string-fret-board/six-string-
 import { PseudoFretComponent } from './string-gap/pseudo-fret/pseudo-fret.component';
 import { TuningCyclerComponent } from './tuning-cycler/tuning-cycler.component';
 import { TogglerComponent } from './toggler/toggler.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TogglerComponent } from './toggler/toggler.component';
     PseudoFretComponent,
     TuningCyclerComponent,
     TogglerComponent,
+    ButtonComponent,
   ],
   imports: [BrowserModule],
   providers: [],

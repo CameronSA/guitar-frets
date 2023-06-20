@@ -9,6 +9,7 @@
   border-color: var(--light-fret-colour);
   height: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 .fret-component {
@@ -38,7 +39,7 @@
 
 .note {
   position: absolute;
-  bottom: -0.8rem;
+  bottom: -1rem;
   padding: 0.1rem;
   background-color: var(--light-note-background-colour);
   border-width: 0.1rem;
@@ -50,6 +51,11 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+}
+
+.selected {
+  background-color: var(--light-note-selected);
+  color: var(--dark-note-colour);
 }
 
 .note > * {

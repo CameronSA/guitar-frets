@@ -1,7 +1,11 @@
-<div class="fret-container" [ngStyle]="{ width: width }">
+<div class="fret-container" [ngStyle]="{ width: width }" (click)="onClick()">
   <div class="fret-component fret-top">
-    <div class="note" *ngIf="showNotes">
-      <div>{{note}}</div>
+    <div
+      class="note"
+      *ngIf="showNotes || isSelected"
+      [ngClass]="{ selected: isSelected }"
+    >
+      <div>{{ note }}</div>
     </div>
   </div>
   <div class="fret-component fret-bottom">&nbsp;</div>

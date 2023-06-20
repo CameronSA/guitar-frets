@@ -13,6 +13,7 @@ export class SixStringFretBoardComponent implements OnChanges {
   @Input() selectedTuning: Tuning = Tuning.Standard;
   @Input() showNotes: boolean = false;
   @Input() showFlats: boolean = false;
+  @Input() resetToggle: boolean = false;
 
   ngOnChanges(): void {
     this.tunings = [];

@@ -2,6 +2,7 @@
   [selectedTuning]="tuning"
   [showNotes]="showNotes"
   [showFlats]="showFlats"
+  [resetToggle]="reset"
 ></app-six-string-fret-board>
 <div class="buttons">
   <app-tuning-cycler
@@ -13,4 +14,5 @@
     falseText="Show Notes"
   ></app-toggler>
   <app-toggler (toggleEvent)="onFlatsToggle($event)" trueText="Show Sharps" falseText="Show Flats"></app-toggler>
+  <app-button (clickEvent)="onResetButtonClick()" displayText="Reset" ></app-button>
 </div>

@@ -10,6 +10,7 @@
   --dark-note-colour: beige;
   --light-note-colour: rgb(88, 88, 88);
   --light-note-hover: rgb(109, 109, 109);
+  --light-note-selected: #c08b57;
   --box-shadow: 0.1rem 0.2rem 0.5rem black;
 }
 
