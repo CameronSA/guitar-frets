@@ -3,4 +3,14 @@
   [showNotes]="showNotes"
   [showFlats]="showFlats"
 ></app-six-string-fret-board>
-<app-tuning-cycler (tuningSelectionEvent)="onTuningSelection($event)"></app-tuning-cycler>
+<div class="buttons">
+  <app-tuning-cycler
+    (tuningSelectionEvent)="onTuningSelection($event)"
+  ></app-tuning-cycler>
+  <app-toggler
+    (toggleEvent)="onNotesToggle($event)"
+    trueText="Hide Notes"
+    falseText="Show Notes"
+  ></app-toggler>
+  <app-toggler (toggleEvent)="onFlatsToggle($event)" trueText="Show Sharps" falseText="Show Flats"></app-toggler>
+</div>

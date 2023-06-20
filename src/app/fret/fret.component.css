@@ -48,10 +48,14 @@
   z-index: 10;
   color: var(--light-note-colour);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
 .note > * {
   width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
 }
 
 .note:hover {

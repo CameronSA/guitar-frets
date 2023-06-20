@@ -1,11 +1,13 @@
 <div class="container">
-  <div class="button" (click)="onPrevClick()">
-    <
-  </div>
-  <div>
-    {{selectedTuning()}}
-  </div>
-  <div class="button" (click)="onNextClick()">
-    >
+  <div class="cycler">
+    <div class="button left" (click)="onPrevClick()">
+      <
+    </div>
+    <div class="selected">
+      {{selectedTuning()}}
+    </div>
+    <div class="button right" (click)="onNextClick()">
+      >
+    </div>
   </div>
 </div>

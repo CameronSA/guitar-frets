@@ -7,7 +7,7 @@ div {
   flex-direction: row;
   justify-content: left;
   background-color: var(--light-background-colour);
-  box-shadow: 0.1rem 0.2rem 0.5rem black;
+  box-shadow: var(--box-shadow);
   width: 98vw;
   height: 40vh;
   border-width: 0;
@@ -20,6 +20,7 @@ div {
 
 .tunings {
   padding: 0.5rem;
+  width: 2%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,6 +28,7 @@ div {
 
 .tuning {
   color: var(--light-tuning-colour);
+  text-align: center;
 }
 
 .top-string {
