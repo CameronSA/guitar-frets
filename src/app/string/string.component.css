@@ -1,6 +1,5 @@
 .string-container{
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   justify-content: center;
   height: 16.6667%;
 }

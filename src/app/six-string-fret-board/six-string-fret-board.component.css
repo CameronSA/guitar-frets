@@ -9,7 +9,7 @@ div {
   background-color: var(--light-background-colour);
   box-shadow: var(--box-shadow);
   /* width: 98vw; */
-  height: 80vh;
+  height: 75vh;
   border-width: 0;
   border-left-width: 0.1rem;
   border-right-width: 0.1rem;
