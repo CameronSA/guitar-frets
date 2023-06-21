@@ -1,4 +1,4 @@
-<ng-container *ngIf="isLandscape else portrait">
+<div class="container" *ngIf="isLandscape else portrait">
   <app-six-string-fret-board
     [selectedTuning]="tuning"
     [showNotes]="showNotes"
@@ -33,7 +33,7 @@
       displayText="Clear"
     ></app-button>
   </div>
-</ng-container>
+</div>
 
 <ng-template #portrait>
   <div class="orientation-message-container"><div class="orientation-message">Wrong Orientation. Tilt your device!</div></div>
