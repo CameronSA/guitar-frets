@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Tuning } from './tuning-cycler/tuning-cycler.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { Tuning } from './tuning-cycler/tuning-cycler.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'guitar-frets';
 
   tuning = Tuning.Standard;
@@ -14,6 +14,19 @@ export class AppComponent {
   showFlats = false;
   reset = false;
   multiSelect = false;
+  isLandscape = false;
+
+  landscape = window.matchMedia("(orientation: landscape)");
+
+  ngOnInit(): void {
+    if(screen.orientation.type.includes("landscape")){
+      this.isLandscape = true;
+    }
+
+    this.landscape.addEventListener("change", ev => {
+      this.isLandscape = this.landscape.matches;
+    });
+  }
 
   onTuningSelection(tuning: Tuning) {
     this.tuning = tuning;
@@ -28,7 +41,7 @@ export class AppComponent {
   }
 
   onResetButtonClick() {
-    this.reset = !this.reset
+    this.reset = !this.reset;
   }
 
   onMultiSelectToggle(multiSelect: boolean) {
@@ -136,4 +149,3 @@ export function getHalfFretWidth(index: number, offset: number): string {
 function fretWidth(index: number): number {
   return 8.35 / (index / (index / 2 + 4) + 1);
 }
-

@@ -1,34 +1,40 @@
-<app-six-string-fret-board
-  [selectedTuning]="tuning"
-  [showNotes]="showNotes"
-  [showFlats]="showFlats"
-  [resetToggle]="reset"
-  [multiSelect]="multiSelect"
-></app-six-string-fret-board>
-<div class="buttons">
-  <app-tuning-cycler
-    (tuningSelectionEvent)="onTuningSelection($event)"
-  ></app-tuning-cycler>
-  <app-toggler
-    class="small-toggler"
-    (toggleEvent)="onNotesToggle($event)"
-    trueText="Showing Notes"
-    falseText="Hiding Notes"
-  ></app-toggler>
-  <app-toggler
-    class="medium-toggler"
-    (toggleEvent)="onFlatsToggle($event)"
-    trueText="Showing Flats"
-    falseText="Showing Sharps"
-  ></app-toggler>
-  <app-toggler
-    class="large-toggler"
-    (toggleEvent)="onMultiSelectToggle($event)"
-    trueText="In Multi Select Mode"
-    falseText="In Single Select Mode"
-  ></app-toggler>
-  <app-button
-    (clickEvent)="onResetButtonClick()"
-    displayText="Clear"
-  ></app-button>
-</div>
+<ng-container *ngIf="isLandscape else portrait">
+  <app-six-string-fret-board
+    [selectedTuning]="tuning"
+    [showNotes]="showNotes"
+    [showFlats]="showFlats"
+    [resetToggle]="reset"
+    [multiSelect]="multiSelect"
+  ></app-six-string-fret-board>
+  <div class="buttons">
+    <app-tuning-cycler
+      (tuningSelectionEvent)="onTuningSelection($event)"
+    ></app-tuning-cycler>
+    <app-toggler
+      class="small-toggler"
+      (toggleEvent)="onNotesToggle($event)"
+      trueText="Showing Notes"
+      falseText="Hiding Notes"
+    ></app-toggler>
+    <app-toggler
+      class="medium-toggler"
+      (toggleEvent)="onFlatsToggle($event)"
+      trueText="Showing Flats"
+      falseText="Showing Sharps"
+    ></app-toggler>
+    <app-toggler
+      class="large-toggler"
+      (toggleEvent)="onMultiSelectToggle($event)"
+      trueText="In Multi Select Mode"
+      falseText="In Single Select Mode"
+    ></app-toggler>
+    <app-button
+      (clickEvent)="onResetButtonClick()"
+      displayText="Clear"
+    ></app-button>
+  </div>
+</ng-container>
+
+<ng-template #portrait>
+  Wrong Orientation. Tilt your device!
+</ng-template>
