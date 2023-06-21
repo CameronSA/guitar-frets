@@ -1,10 +1,12 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges,
+  Output,
 } from '@angular/core';
+import { StringTuning } from '../six-string-fret-board/six-string-fret-board.component';
 
 export interface FretStatus {
   index: number;
@@ -19,12 +21,21 @@ export interface FretStatus {
 export class StringComponent implements OnInit, OnChanges {
   frets: FretStatus[] = []; //fret index, isSelected
   @Input() numberFrets: number = 0;
-  @Input() tuning: number = 0;
+  @Input() stringTuning: StringTuning = {
+    index: 0,
+    stringNote: 'A',
+    fretIndicesToSelect: [],
+    fretIndicesToDeselect: [],
+  };
   @Input() showNotes: boolean = false;
   @Input() showFlats: boolean = false;
   @Input() resetToggle: boolean = false;
+  @Input() changeTrigger: boolean = false;
+  @Output() selectEvent = new EventEmitter<FretStatus>();
   prevResetToggle: boolean = false;
-  prevTuning: number = 0;
+  prevStringTuningIndex: number = 0;
+  prevSelectedNotes: number[] = [];
+  prevDeselectedNotes: number[] = [];
 
   ngOnInit() {
     this.frets = [];
@@ -40,13 +51,11 @@ export class StringComponent implements OnInit, OnChanges {
     if (this.prevResetToggle !== this.resetToggle) {
       this.reset();
       this.prevResetToggle = this.resetToggle;
-    }
-
-    if (this.prevTuning !== this.tuning) {
+    } else if (this.prevStringTuningIndex !== this.stringTuning.index) {
       let fretsToSelect: number[] = [];
       this.frets.forEach((fret) => {
         if (fret.isSelected) {
-          let offset = this.tuning - this.prevTuning;
+          let offset = this.stringTuning.index - this.prevStringTuningIndex;
           let newIndex = fret.index - offset;
           if (newIndex >= 0 && newIndex < this.numberFrets - 1) {
             fretsToSelect.push(newIndex);
@@ -58,7 +67,20 @@ export class StringComponent implements OnInit, OnChanges {
         this.frets[i].isSelected = fretsToSelect.includes(this.frets[i].index);
       }
 
-      this.prevTuning = this.tuning;
+      this.prevStringTuningIndex = this.stringTuning.index;
+    } else if (
+      this.prevSelectedNotes != this.stringTuning.fretIndicesToSelect ||
+      this.prevDeselectedNotes != this.stringTuning.fretIndicesToDeselect
+    ) {
+      for (let i = 0; i< this.stringTuning.fretIndicesToSelect.length; i++) {
+        let fretIndex = this.stringTuning.fretIndicesToSelect[i];
+        this.frets[fretIndex].isSelected = true;
+      }
+
+      for (let i = 0; i< this.stringTuning.fretIndicesToDeselect.length; i++) {
+        let fretIndex = this.stringTuning.fretIndicesToDeselect[i];
+        this.frets[fretIndex].isSelected = false;
+      }
     }
   }
 
@@ -69,10 +91,18 @@ export class StringComponent implements OnInit, OnChanges {
   }
 
   onFretClick(index: number) {
+    let selected = false;
     for (let i = 0; i < this.frets.length; i++) {
       if (this.frets[i].index === index) {
-        this.frets[i].isSelected = !this.frets[i].isSelected;
+        selected = !this.frets[i].isSelected;
+        this.frets[i].isSelected = selected;
+        break;
       }
     }
+
+    this.selectEvent.emit({
+      index: index,
+      isSelected: selected,
+    });
   }
 }

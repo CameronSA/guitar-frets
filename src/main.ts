@@ -34,14 +34,42 @@ export function getNotes(flats: boolean): Map<number, string> {
   return baseNotes;
 }
 
-export function getNoteIndex(fretIndex: number, fretTuning: number): number {
-  let index = fretIndex + fretTuning + 1;
+export function getNoteIndex(fretIndex: number, stringTuning: number): number {
+  let index = fretIndex + stringTuning + 1;
   if (index > 11) {
-    let offset = index%12;
+    let offset = index % 12;
     return offset;
   } else {
     return index;
   }
+}
+
+export function getFretIndices(
+  noteIndex: number,
+  stringTuning: number,
+  totalNumberFrets: number,
+): number[] {
+  // Given a note index, gets all fret indices that are the same note
+  let firstFretIndex = noteIndex - stringTuning - 1;
+  if (firstFretIndex < 0) {
+    firstFretIndex += 12;
+  };
+
+  let lowerIndex = firstFretIndex - 12;
+  let upperIndex = firstFretIndex + 12;
+  let fretIndices: number[] = [];
+
+  if (lowerIndex >= 0) {
+    fretIndices.push(lowerIndex);
+  }
+
+  fretIndices.push(firstFretIndex);
+
+  if (upperIndex < totalNumberFrets) {
+    fretIndices.push(upperIndex);
+  }
+
+  return fretIndices;
 }
 
 export function getStandardTuningIndices(): number[] {
@@ -51,12 +79,12 @@ export function getStandardTuningIndices(): number[] {
 
 export function getOpenDTuningIndices(): number[] {
   // D,A,F#,D,A,D
-  return [5,0,9,5,0,5];
+  return [5, 0, 9, 5, 0, 5];
 }
 
 export function getDADGADTuningIndices(): number[] {
   // D,A,G,D,A,D
-  return [5,0,10,5,0,5];
+  return [5, 0, 10, 5, 0, 5];
 }
 
 export function getFretWidth(index: number): string {

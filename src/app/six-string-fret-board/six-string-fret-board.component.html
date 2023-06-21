@@ -1,20 +1,79 @@
 <div class="container">
   <div class="tunings">
     <div class="tuning" *ngFor="let tuning of tunings">
-      {{tuning[1]}}
+      {{ tuning.stringNote }}
     </div>
   </div>
   <div class="fret-board">
-    <app-string class="top-string" [numberFrets]="numberFrets" [tuning]="tunings[0][0]" [showNotes]="showNotes" [showFlats]="showFlats" [resetToggle]="resetToggle"></app-string>
-    <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
-    <app-string [numberFrets]="numberFrets" [tuning]="tunings[1][0]" [showNotes]="showNotes" [showFlats]="showFlats" [resetToggle]="resetToggle"></app-string>
+    <app-string
+      class="top-string"
+      [numberFrets]="numberFrets"
+      [stringTuning]="tunings[0]"
+      [showNotes]="showNotes"
+      [showFlats]="showFlats"
+      [resetToggle]="resetToggle"
+      (selectEvent)="onSelectEvent($event, tunings[0].index)"
+      [changeTrigger]="changeTrigger"
+    ></app-string>
+    <app-string-gap
+      [numberFrets]="numberFrets"
+      [fretsToMark]="[11]"
+    ></app-string-gap>
+    <app-string
+      [numberFrets]="numberFrets"
+      [stringTuning]="tunings[1]"
+      [showNotes]="showNotes"
+      [showFlats]="showFlats"
+      [resetToggle]="resetToggle"
+      (selectEvent)="onSelectEvent($event, tunings[1].index)"
+      [changeTrigger]="changeTrigger"
+    ></app-string>
     <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
-    <app-string [numberFrets]="numberFrets" [tuning]="tunings[2][0]" [showNotes]="showNotes" [showFlats]="showFlats" [resetToggle]="resetToggle"></app-string>
-    <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[2,4,6,8,14,16]"></app-string-gap>
-    <app-string [numberFrets]="numberFrets" [tuning]="tunings[3][0]"[showNotes]="showNotes" [showFlats]="showFlats" [resetToggle]="resetToggle"></app-string>
+    <app-string
+      [numberFrets]="numberFrets"
+      [stringTuning]="tunings[2]"
+      [showNotes]="showNotes"
+      [showFlats]="showFlats"
+      [resetToggle]="resetToggle"
+      (selectEvent)="onSelectEvent($event, tunings[2].index)"
+      [changeTrigger]="changeTrigger"
+    ></app-string>
+    <app-string-gap
+      [numberFrets]="numberFrets"
+      [fretsToMark]="[2, 4, 6, 8, 14, 16]"
+    ></app-string-gap>
+    <app-string
+      [numberFrets]="numberFrets"
+      [stringTuning]="tunings[3]"
+      [showNotes]="showNotes"
+      [showFlats]="showFlats"
+      [resetToggle]="resetToggle"
+      (selectEvent)="onSelectEvent($event, tunings[3].index)"
+      [changeTrigger]="changeTrigger"
+    ></app-string>
     <app-string-gap [numberFrets]="numberFrets"></app-string-gap>
-    <app-string [numberFrets]="numberFrets" [tuning]="tunings[4][0]"[showNotes]="showNotes" [showFlats]="showFlats" [resetToggle]="resetToggle"></app-string>
-    <app-string-gap [numberFrets]="numberFrets" [fretsToMark]="[11]"></app-string-gap>
-    <app-string class="bottom-string" [numberFrets]="numberFrets" [tuning]="tunings[5][0]"[showNotes]="showNotes" [showFlats]="showFlats" [resetToggle]="resetToggle"></app-string>
+    <app-string
+      [numberFrets]="numberFrets"
+      [stringTuning]="tunings[4]"
+      [showNotes]="showNotes"
+      [showFlats]="showFlats"
+      [resetToggle]="resetToggle"
+      (selectEvent)="onSelectEvent($event, tunings[4].index)"
+      [changeTrigger]="changeTrigger"
+    ></app-string>
+    <app-string-gap
+      [numberFrets]="numberFrets"
+      [fretsToMark]="[11]"
+    ></app-string-gap>
+    <app-string
+      class="bottom-string"
+      [numberFrets]="numberFrets"
+      [stringTuning]="tunings[5]"
+      [showNotes]="showNotes"
+      [showFlats]="showFlats"
+      [resetToggle]="resetToggle"
+      (selectEvent)="onSelectEvent($event, tunings[5].index)"
+      [changeTrigger]="changeTrigger"
+    ></app-string>
   </div>
 </div>
