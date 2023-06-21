@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { PseudoFretComponent } from './string-gap/pseudo-fret/pseudo-fret.compon
 import { TuningCyclerComponent } from './tuning-cycler/tuning-cycler.component';
 import { TogglerComponent } from './toggler/toggler.component';
 import { ButtonComponent } from './button/button.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import { ButtonComponent } from './button/button.component';
     TogglerComponent,
     ButtonComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, ServiceWorkerModule.register('ngsw-worker.js', {
+  enabled: !isDevMode(),
+  // Register the ServiceWorker as soon as the application is stable
+  // or after 30 seconds (whichever comes first).
+  registrationStrategy: 'registerWhenStable:30000'
+})],
   providers: [],
   bootstrap: [AppComponent],
 })
