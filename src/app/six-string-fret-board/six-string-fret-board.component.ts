@@ -6,7 +6,7 @@ import {
   getNotes,
   getOpenDTuningIndices,
   getStandardTuningIndices,
-} from 'src/main';
+} from 'src/app/app.component';
 import { Tuning } from '../tuning-cycler/tuning-cycler.component';
 import { FretStatus } from '../string/string.component';
 

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { getFretWidth, getNoteIndex, getNotes } from 'src/main';
+import { getFretWidth, getNoteIndex, getNotes } from 'src/app/app.component';
 
 @Component({
   selector: 'app-fret',

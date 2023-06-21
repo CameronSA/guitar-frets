@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { StringTuning } from '../six-string-fret-board/six-string-fret-board.component';
-import { getEquivalentFrets } from 'src/main';
+import { getEquivalentFrets } from 'src/app/app.component';
 
 export interface FretStatus {
   index: number;
