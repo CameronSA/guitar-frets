@@ -29,7 +29,7 @@ export class SixStringFretBoardComponent implements OnChanges {
   @Input() showNotes: boolean = false;
   @Input() showFlats: boolean = false;
   @Input() resetToggle: boolean = false;
-  @Input() multiSelect: boolean = true;
+  @Input() multiSelect: boolean = false;
   changeTrigger: boolean = false;
 
   ngOnChanges(): void {
@@ -60,6 +60,10 @@ export class SixStringFretBoardComponent implements OnChanges {
   }
 
   onSelectEvent(fretStatus: FretStatus, stringTuning: number) {
+    if(!this.multiSelect){
+      return;
+    }
+
     let noteIndex = getNoteIndex(fretStatus.index, stringTuning);
 
     for (let i = 0; i < this.tunings.length; i++) {

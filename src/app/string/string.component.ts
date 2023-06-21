@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { StringTuning } from '../six-string-fret-board/six-string-fret-board.component';
+import { getEquivalentFrets } from 'src/main';
 
 export interface FretStatus {
   index: number;
@@ -31,6 +32,7 @@ export class StringComponent implements OnInit, OnChanges {
   @Input() showFlats: boolean = false;
   @Input() resetToggle: boolean = false;
   @Input() changeTrigger: boolean = false;
+  @Input() multiSelect: boolean = false;
   @Output() selectEvent = new EventEmitter<FretStatus>();
   prevResetToggle: boolean = false;
   prevStringTuningIndex: number = 0;
@@ -63,8 +65,27 @@ export class StringComponent implements OnInit, OnChanges {
         }
       });
 
-      for (let i = 0; i < this.frets.length; i++) {
-        this.frets[i].isSelected = fretsToSelect.includes(this.frets[i].index);
+      if (this.multiSelect) {
+        this.frets.forEach((fret) => {
+          fret.isSelected = false;
+        });
+
+        for (let i = 0; i < fretsToSelect.length; i++) {
+          let fretIndices = getEquivalentFrets(
+            fretsToSelect[i],
+            this.numberFrets
+          );
+
+          for (let j = 0; j < fretIndices.length; j++) {
+            this.frets[fretIndices[j]].isSelected = true;
+          }
+        }
+      } else {
+        for (let i = 0; i < this.frets.length; i++) {
+          this.frets[i].isSelected = fretsToSelect.includes(
+            this.frets[i].index
+          );
+        }
       }
 
       this.prevStringTuningIndex = this.stringTuning.index;
@@ -72,12 +93,12 @@ export class StringComponent implements OnInit, OnChanges {
       this.prevSelectedNotes != this.stringTuning.fretIndicesToSelect ||
       this.prevDeselectedNotes != this.stringTuning.fretIndicesToDeselect
     ) {
-      for (let i = 0; i< this.stringTuning.fretIndicesToSelect.length; i++) {
+      for (let i = 0; i < this.stringTuning.fretIndicesToSelect.length; i++) {
         let fretIndex = this.stringTuning.fretIndicesToSelect[i];
         this.frets[fretIndex].isSelected = true;
       }
 
-      for (let i = 0; i< this.stringTuning.fretIndicesToDeselect.length; i++) {
+      for (let i = 0; i < this.stringTuning.fretIndicesToDeselect.length; i++) {
         let fretIndex = this.stringTuning.fretIndicesToDeselect[i];
         this.frets[fretIndex].isSelected = false;
       }

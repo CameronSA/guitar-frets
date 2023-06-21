@@ -3,3 +3,15 @@
   flex-direction: row;
   padding: 0.5rem;
 }
+
+.small-toggler {
+  width: 10rem;
+}
+
+.medium-toggler {
+  width: 12rem;
+}
+
+.large-toggler {
+  width: 15rem;
+}

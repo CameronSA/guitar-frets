@@ -44,32 +44,39 @@ export function getNoteIndex(fretIndex: number, stringTuning: number): number {
   }
 }
 
-export function getFretIndices(
-  noteIndex: number,
-  stringTuning: number,
-  totalNumberFrets: number,
+export function getEquivalentFrets(
+  fretIndex: number,
+  totalNumberFrets: number
 ): number[] {
-  // Given a note index, gets all fret indices that are the same note
-  let firstFretIndex = noteIndex - stringTuning - 1;
-  if (firstFretIndex < 0) {
-    firstFretIndex += 12;
-  };
-
-  let lowerIndex = firstFretIndex - 12;
-  let upperIndex = firstFretIndex + 12;
+  let lowerIndex = fretIndex - 12;
+  let upperIndex = fretIndex + 12;
   let fretIndices: number[] = [];
 
   if (lowerIndex >= 0) {
     fretIndices.push(lowerIndex);
   }
 
-  fretIndices.push(firstFretIndex);
+  fretIndices.push(fretIndex);
 
   if (upperIndex < totalNumberFrets) {
     fretIndices.push(upperIndex);
   }
 
   return fretIndices;
+}
+
+export function getFretIndices(
+  noteIndex: number,
+  stringTuning: number,
+  totalNumberFrets: number
+): number[] {
+  // Given a note index, gets all fret indices that are the same note
+  let firstFretIndex = noteIndex - stringTuning - 1;
+  if (firstFretIndex < 0) {
+    firstFretIndex += 12;
+  }
+
+  return getEquivalentFrets(firstFretIndex, totalNumberFrets);
 }
 
 export function getStandardTuningIndices(): number[] {

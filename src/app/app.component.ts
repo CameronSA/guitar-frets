@@ -13,6 +13,7 @@ export class AppComponent {
   showNotes = false;
   showFlats = false;
   reset = false;
+  multiSelect = false;
 
   onTuningSelection(tuning: Tuning) {
     this.tuning = tuning;
@@ -28,5 +29,9 @@ export class AppComponent {
 
   onResetButtonClick() {
     this.reset = !this.reset
+  }
+
+  onMultiSelectToggle(multiSelect: boolean) {
+    this.multiSelect = multiSelect;
   }
 }

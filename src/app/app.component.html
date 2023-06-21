@@ -3,16 +3,32 @@
   [showNotes]="showNotes"
   [showFlats]="showFlats"
   [resetToggle]="reset"
+  [multiSelect]="multiSelect"
 ></app-six-string-fret-board>
 <div class="buttons">
   <app-tuning-cycler
     (tuningSelectionEvent)="onTuningSelection($event)"
   ></app-tuning-cycler>
   <app-toggler
+    class="small-toggler"
     (toggleEvent)="onNotesToggle($event)"
-    trueText="Hide Notes"
-    falseText="Show Notes"
+    trueText="Showing Notes"
+    falseText="Hiding Notes"
   ></app-toggler>
-  <app-toggler (toggleEvent)="onFlatsToggle($event)" trueText="Show Sharps" falseText="Show Flats"></app-toggler>
-  <app-button (clickEvent)="onResetButtonClick()" displayText="Reset" ></app-button>
+  <app-toggler
+    class="medium-toggler"
+    (toggleEvent)="onFlatsToggle($event)"
+    trueText="Showing Flats"
+    falseText="Showing Sharps"
+  ></app-toggler>
+  <app-toggler
+    class="large-toggler"
+    (toggleEvent)="onMultiSelectToggle($event)"
+    trueText="In Multi Select Mode"
+    falseText="In Single Select Mode"
+  ></app-toggler>
+  <app-button
+    (clickEvent)="onResetButtonClick()"
+    displayText="Reset"
+  ></app-button>
 </div>
