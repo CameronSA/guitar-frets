@@ -71,8 +71,10 @@ export class SixStringFretBoardComponent implements OnChanges {
       console.log(fretIndices);
       if (fretStatus.isSelected) {
         this.tunings[i].fretIndicesToSelect = fretIndices;
+        this.tunings[i].fretIndicesToDeselect = [];
       } else {
         this.tunings[i].fretIndicesToDeselect = fretIndices;
+        this.tunings[i].fretIndicesToSelect = [];
       }
     }
 
