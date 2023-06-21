@@ -15,3 +15,18 @@
 .large-toggler {
   width: 15rem;
 }
+
+.orientation-message-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.orientation-message {
+  padding: 1rem;
+  border: 0.1rem solid var(--light-note-colour);
+  border-radius: 0.5rem;
+  background-color: var(--light-note-background-colour);
+  box-shadow: var(--box-shadow);
+}

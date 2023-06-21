@@ -147,5 +147,5 @@ export function getHalfFretWidth(index: number, offset: number): string {
 }
 
 function fretWidth(index: number): number {
-  return 8.35 / (index / (index / 2 + 4) + 1);
+  return 8 / (index / (index / 2 + 4) + 1);
 }
