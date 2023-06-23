@@ -64,7 +64,9 @@
   text-align: center;
 }
 
-.note:hover {
-  background-color: var(--light-note-hover);
-  color: var(--dark-note-colour);
+@media (hover: hover) {
+  .note:hover {
+    background-color: var(--light-note-hover);
+    color: var(--dark-note-colour);
+  }
 }

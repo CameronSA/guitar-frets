@@ -27,7 +27,9 @@
   border-radius: 0.5rem;
 }
 
-.toggler > *:hover {
-  background-color: var(--light-note-hover);
-  color: var(--dark-note-colour);
+@media (hover: hover) {
+  .toggler > *:hover {
+    background-color: var(--light-note-hover);
+    color: var(--dark-note-colour);
+  }
 }

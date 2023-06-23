@@ -35,11 +35,6 @@
   border: 0.1rem solid var(--light-note-colour);
 }
 
-.button:hover {
-  background-color: var(--light-note-hover);
-  color: var(--dark-note-colour);
-}
-
 .left {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -48,4 +43,12 @@
 .right {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+}
+
+
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--light-note-hover);
+    color: var(--dark-note-colour);
+  }
 }
