@@ -9,3 +9,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+
+## Known Issues
+
+String 5 loses selected notes on the end of the string in multi-select mode when cycling through tunings.
