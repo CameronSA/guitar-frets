@@ -1,6 +1,6 @@
 {
-  "name": "guitar-frets",
-  "short_name": "guitar-frets",
+  "name": "Guitar Frets",
+  "short_name": "Frets",
   "theme_color": "#c08b57",
   "background_color": "#C4A484",
   "display": "standalone",
