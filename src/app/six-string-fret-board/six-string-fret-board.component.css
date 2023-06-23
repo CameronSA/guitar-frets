@@ -8,7 +8,7 @@ div {
   justify-content: left;
   background-color: var(--light-background-colour);
   box-shadow: var(--box-shadow);
-  height: 80%;
+  height: 75%;
   border-width: 0;
   border-left-width: 0.1rem;
   border-right-width: 0.1rem;
