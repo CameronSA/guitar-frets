@@ -4,6 +4,14 @@ export enum Tuning {
   Standard = 'Standard',
   OpenD = 'OpenD',
   DADGAD = 'DADGAD',
+  DropD = 'DropD',
+  DoubleDropD = 'DoubleDropD',
+  OpenE = 'OpenE',
+  OpenG = 'OpenG',
+  OpenA = 'OpenA',
+  OpenC = 'OpenC',
+  OpenC6 = 'OpenC6',
+  DGCGCD = 'DGCGCD'
 }
 
 @Component({

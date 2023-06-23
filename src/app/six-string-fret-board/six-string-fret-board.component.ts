@@ -1,10 +1,18 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import {
   getDADGADTuningIndices,
+  getDGCGCDTuningIndices,
+  getDoubleDropDTuningIndices,
+  getDropDTuningIndices,
   getFretIndices,
   getNoteIndex,
   getNotes,
+  getOpenATuningIndices,
+  getOpenC6TuningIndices,
+  getOpenCTuningIndices,
   getOpenDTuningIndices,
+  getOpenETuningIndices,
+  getOpenGTuningIndices,
   getStandardTuningIndices,
 } from 'src/app/app.component';
 import { Tuning } from '../tuning-cycler/tuning-cycler.component';
@@ -54,8 +62,22 @@ export class SixStringFretBoardComponent implements OnChanges {
         return getOpenDTuningIndices();
       case Tuning.DADGAD:
         return getDADGADTuningIndices();
-      default:
-        return getStandardTuningIndices();
+      case Tuning.DropD:
+        return getDropDTuningIndices();
+      case Tuning.DoubleDropD:
+        return getDoubleDropDTuningIndices();
+      case Tuning.OpenE:
+        return getOpenETuningIndices();
+      case Tuning.OpenG:
+        return getOpenGTuningIndices();
+      case Tuning.OpenA:
+        return getOpenATuningIndices();
+      case Tuning.OpenC:
+        return getOpenCTuningIndices();
+      case Tuning.OpenC6:
+        return getOpenC6TuningIndices();
+      case Tuning.DGCGCD:
+        return getDGCGCDTuningIndices();
     }
   }
 

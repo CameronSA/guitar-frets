@@ -16,14 +16,14 @@ export class AppComponent implements OnInit {
   multiSelect = false;
   isLandscape = false;
 
-  landscape = window.matchMedia("(orientation: landscape)");
+  landscape = window.matchMedia('(orientation: landscape)');
 
   ngOnInit(): void {
-    if(screen.orientation.type.includes("landscape")){
+    if (screen.orientation.type.includes('landscape')) {
       this.isLandscape = true;
     }
 
-    this.landscape.addEventListener("change", ev => {
+    this.landscape.addEventListener('change', (ev) => {
       this.isLandscape = this.landscape.matches;
     });
   }
@@ -135,6 +135,46 @@ export function getOpenDTuningIndices(): number[] {
 export function getDADGADTuningIndices(): number[] {
   // D,A,G,D,A,D
   return [5, 0, 10, 5, 0, 5];
+}
+
+export function getDropDTuningIndices(): number[] {
+  // E,B,G,D,A,D
+  return [7, 2, 10, 5, 0, 5];
+}
+
+export function getDoubleDropDTuningIndices(): number[] {
+  // D,B,G,D,A,D
+  return [5, 2, 10, 5, 0, 5];
+}
+
+export function getOpenETuningIndices(): number[] {
+  // E,B,G#,E,B,E
+  return [7, 2, 11, 7, 2, 7];
+}
+
+export function getOpenGTuningIndices(): number[] {
+  // D,B,G,D,G,D
+  return [5, 2, 10, 5, 10, 5];
+}
+
+export function getOpenATuningIndices(): number[] {
+  // E,C#,A,E,A,E
+  return [7, 4, 0, 7, 0, 7];
+}
+
+export function getDGCGCDTuningIndices(): number[] {
+  // D,C,G,C,G,D
+  return [5, 3, 10, 3, 10, 5];
+}
+
+export function getOpenC6TuningIndices(): number[] {
+  // E,C,G,C,A,C
+  return [7, 3, 10, 3, 0, 3];
+}
+
+export function getOpenCTuningIndices(): number[] {
+  // E,G,G,C,G,C
+  return [7, 10, 10, 3, 10, 3];
 }
 
 export function getFretWidth(index: number): string {
