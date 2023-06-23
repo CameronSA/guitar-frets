@@ -2,7 +2,7 @@
   "name": "guitar-frets",
   "short_name": "guitar-frets",
   "theme_color": "#c08b57",
-  "background_color": "transparent",
+  "background_color": "#C4A484",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
